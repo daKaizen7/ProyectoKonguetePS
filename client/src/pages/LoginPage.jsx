@@ -2,10 +2,9 @@ import { useForm } from "react-hook-form";
 import "../css/login.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useAuth } from "../context/AuthContext";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
 
 function LoginPage() {
   const {
@@ -14,7 +13,7 @@ function LoginPage() {
     formState: { errors },
   } = useForm();
 
-  const { singin, errors: singinErrors, isAuthenticated} = useAuth();
+  const { singin, errors: singinErrors, isAuthenticated } = useAuth();
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -22,7 +21,6 @@ function LoginPage() {
       navigate("/");
     }
   }, [isAuthenticated]);
-
 
   const onSubmit = handleSubmit((data) => {
     singin(data);

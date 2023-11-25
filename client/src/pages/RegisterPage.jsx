@@ -4,8 +4,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 function RegisterPage() {
   const {
@@ -14,7 +13,7 @@ function RegisterPage() {
     formState: { errors },
   } = useForm();
   const { singup, isAuthenticated, errors: registerErrors } = useAuth();
-  
+
   const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) navigate("/");
@@ -110,7 +109,8 @@ function RegisterPage() {
                             htmlFor="agree"
                             className="custom-control-label"
                           >
-                            Acepto los <a href="#">Términos y Condiciones</a>
+                            Acepto los{" "}
+                            <Link to="/#">Términos y Condiciones</Link>
                           </label>
                         </div>
                       </div>
@@ -128,8 +128,7 @@ function RegisterPage() {
                         </button>
                       </div>
                       <div className="mt-4 text-center">
-                        ¿Ya tienes una cuenta?{" "}
-                        <Link to="/login">Ingresar</Link>
+                        ¿Ya tienes una cuenta? <Link to="/login">Ingresar</Link>
                       </div>
                     </form>
                   </div>

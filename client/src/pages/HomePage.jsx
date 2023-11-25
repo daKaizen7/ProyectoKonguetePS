@@ -1,27 +1,16 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../css/styles.css";
 import "../js/main.js";
+import "../css/styles.css";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
     <>
-      {/* Spinner Start */}
-      <div
-        id="spinner"
-        className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-      >
-        <div
-          className="spinner-grow text-primary"
-          style={{ width: "3rem", height: "3rem" }}
-          role="status"
-        ></div>
-      </div>
-      {/* Spinner End */}
       {/* Navbar Start */}
       <div className="container-fluid sticky-top">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light p-0">
-            <a href="index.html" className="navbar-brand">
+            <Link to="/index" className="navbar-brand">
               <h2 className="text-white">
                 <img
                   id="logo-texto"
@@ -29,7 +18,7 @@ function HomePage() {
                   alt=""
                 />
               </h2>
-            </a>
+            </Link>
             <button
               type="button"
               className="navbar-toggler ms-auto me-0"
@@ -40,43 +29,43 @@ function HomePage() {
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav ms-auto">
-                <a href="index.html" className="nav-item nav-link active">
+                <Link to="/" className="nav-item nav-link active">
                   Home
-                </a>
-                <a href="landing.html" className="nav-item nav-link">
+                </Link>
+                <Link to="/landing" className="nav-item nav-link">
                   Sobre nosotros
-                </a>
-                <a href="producto.html" className="nav-item nav-link">
+                </Link>
+                <Link to="/productos" className="nav-item nav-link">
                   Productos
-                </a>
+                </Link>
                 <div className="nav-item dropdown">
-                  <a
-                    href="#"
+                  <Link
+                    to="/#"
                     className="nav-link dropdown-toggle"
                     data-bs-toggle="dropdown"
                   >
                     Páginas
                     <i className="bi bi-caret-down-fill" />
-                  </a>
+                  </Link>
                   <div className="dropdown-menu bg-light mt-2">
-                    <a href="blog.html" className="dropdown-item">
+                    <Link to="/blog" className="dropdown-item">
                       Articulos
-                    </a>
-                    <a href="404.html" className="dropdown-item">
+                    </Link>
+                    <Link to="/404" className="dropdown-item">
                       404 Page
-                    </a>
+                    </Link>
                   </div>
                 </div>
-                <a href="contacto.html" className="nav-item nav-link">
+                <Link to="/contacto" className="nav-item nav-link">
                   Contáctanos
-                </a>
+                </Link>
               </div>
-              <a
-                href="/client/src/html/login.html"
+              <Link
+                to="/login"
                 className="nav-item nav-link btn btn-dark py-2 px-4  d-lg-inline-block"
               >
                 <i className="bi bi-person"> Ingresar</i>
-              </a>
+              </Link>
             </div>
           </nav>
         </div>
@@ -97,15 +86,12 @@ function HomePage() {
                 feugiat rutrum lectus, sed auctor ex malesuada id. Orci varius
                 natoque penatibus et magnis dis parturient montes.
               </p>
-              <a href="" className="btn btn-dark py-2 px-4 me-3">
+              <Link to="/" className="btn btn-dark py-2 px-4 me-3">
                 Matricúlate ahora
-              </a>
-              <a
-                href="contacto.html"
-                className="btn btn-outline-dark py-2 px-4"
-              >
+              </Link>
+              <Link to="/contacto" className="btn btn-outline-dark py-2 px-4">
                 Contáctanos
-              </a>
+              </Link>
             </div>
             <div className="col-lg-6">
               <img
@@ -221,9 +207,9 @@ function HomePage() {
                       <h1 className="display-6" id="cdt-seconds" />
                     </div>
                   </div>
-                  <a className="btn btn-primary py-2 px-4" href="">
+                  <Link className="btn btn-primary py-2 px-4" to="/">
                     Explorar
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -256,15 +242,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Iniciación a los bailes tropicales
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
@@ -280,15 +266,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Merengue
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
@@ -304,15 +290,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Porro
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
@@ -328,15 +314,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Salsa
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -380,9 +366,9 @@ function HomePage() {
                       <h1 className="display-6" id="cdt-seconds" />
                     </div>
                   </div>
-                  <a className="btn btn-primary py-2 px-4" href="">
+                  <Link className="btn btn-primary py-2 px-4" to="/">
                     Explorar
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -415,15 +401,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Iniciación a los bailes de salón
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
@@ -439,15 +425,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Bolero
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
@@ -463,15 +449,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Tango
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
@@ -487,15 +473,15 @@ function HomePage() {
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
                   <small className="fa fa-star text-primary" />
-                  <small>(99)</small>
+                  <small></small>
                 </div>
-                <a href="" className="h6 d-inline-block mb-2">
+                <Link to="/" className="h6 d-inline-block mb-2">
                   Paso Doble
-                </a>
+                </Link>
                 <h5 className="text-primary mb-3">$8000 a $40000</h5>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Detalles
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -556,9 +542,9 @@ function HomePage() {
                   src="assets/img/tipos-image.jpg"
                   alt=""
                 />
-                <a href="" className="h5 lh-base d-inline-block">
+                <Link to="/" className="h5 lh-base d-inline-block">
                   Tipos de baile
-                </a>
+                </Link>
                 <div className="d-flex text-black-50 mb-2">
                   <div className="pe-3">
                     <small className="fa fa-eye me-1" />
@@ -573,9 +559,9 @@ function HomePage() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
                   aliquet, erat non malesuada consequat.
                 </p>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Leer más
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-4 fadeIn">
@@ -585,9 +571,9 @@ function HomePage() {
                   src="assets/img/baile-salud-image.jpg"
                   alt=""
                 />
-                <a href="" className="h5 lh-base d-inline-block">
+                <Link to="/" className="h5 lh-base d-inline-block">
                   Bailar y sus beneficios a la salud
-                </a>
+                </Link>
                 <div className="d-flex text-black-50 mb-2">
                   <div className="pe-3">
                     <small className="fa fa-eye me-1" />
@@ -602,9 +588,9 @@ function HomePage() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
                   aliquet, erat non malesuada consequat.
                 </p>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Leer más
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-4 fadeIn">
@@ -614,9 +600,9 @@ function HomePage() {
                   src="assets/img/ciencia-baile.jpg"
                   alt=""
                 />
-                <a href="" className="h5 lh-base d-inline-block">
+                <Link to="/" className="h5 lh-base d-inline-block">
                   La ciencia detrás del baile
-                </a>
+                </Link>
                 <div className="d-flex text-black-50 mb-2">
                   <div className="pe-3">
                     <small className="fa fa-eye me-1" />
@@ -631,9 +617,9 @@ function HomePage() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
                   aliquet, erat non malesuada consequat.
                 </p>
-                <a href="" className="btn btn-outline-primary px-3">
+                <Link to="/" className="btn btn-outline-primary px-3">
                   Leer más
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -645,11 +631,11 @@ function HomePage() {
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-md-6 col-lg-3 fadeIn">
-              <a href="index.html" className="d-inline-block mb-3">
+              <Link to="/index" className="d-inline-block mb-3">
                 <h2 className="text-white">
                   <img id="logo-texto" src="assets/img/logo_texto.png" alt="" />
                 </h2>
-              </a>
+              </Link>
               <p className="mb-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
                 aliquet, erat non malesuada consequat, nibh erat tempus risus,
@@ -671,58 +657,70 @@ function HomePage() {
                 info@konguete.com
               </p>
               <div className="d-flex pt-2">
-                <a className="btn btn-square btn-outline-primary me-1" href="">
+                <Link
+                  className="btn btn-square btn-outline-primary me-1"
+                  to="/"
+                >
                   <i className="fab fa-twitter" />
-                </a>
-                <a className="btn btn-square btn-outline-primary me-1" href="">
+                </Link>
+                <Link
+                  className="btn btn-square btn-outline-primary me-1"
+                  to="/"
+                >
                   <i className="fab fa-facebook-f" />
-                </a>
-                <a className="btn btn-square btn-outline-primary me-1" href="">
+                </Link>
+                <Link
+                  className="btn btn-square btn-outline-primary me-1"
+                  to="/"
+                >
                   <i className="fab fa-instagram" />
-                </a>
-                <a className="btn btn-square btn-outline-primary me-1" href="">
+                </Link>
+                <Link
+                  className="btn btn-square btn-outline-primary me-1"
+                  to="/"
+                >
                   <i className="fab fa-linkedin-in" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
               <h5 className="mb-4">Nuestros Productos</h5>
-              <a className="btn btn-link" href="">
+              <Link className="btn btn-link" to="/">
                 Iniciación
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Merengue
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Porro
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Salsa
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Bachata
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Tango
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Bolero
-              </a>
+              </Link>
             </div>
             <div className="col-md-6 col-lg-3 fadeIn">
               <h5 className="mb-4">Navegación</h5>
-              <a className="btn btn-link" href="">
+              <Link className="btn btn-link" to="/">
                 Sobre nosotros
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Contáctanos
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Política de privacidad
-              </a>
-              <a className="btn btn-link" href="">
+              </Link>
+              <Link className="btn btn-link" to="/">
                 Términos &amp; Condiciones
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -731,17 +729,17 @@ function HomePage() {
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 ©{" "}
-                <a className="border-bottom" href="#">
+                <Link className="border-bottom" to="/#">
                   ©2023 Konguete
-                </a>
+                </Link>
                 , Todos los derechos reservados.
               </div>
               <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
-                  <a href="">Home</a>
-                  <a href="">Cookies</a>
-                  <a href="">Ayuda</a>
-                  <a href="">FAQs</a>
+                  <Link to="/">Home</Link>
+                  <Link to="/">Cookies</Link>
+                  <Link to="/">Ayuda</Link>
+                  <Link to="/">FAQs</Link>
                 </div>
               </div>
             </div>
@@ -750,9 +748,12 @@ function HomePage() {
       </div>
       {/* Footer End */}
       {/* Back to Top */}
-      <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
+      <Link
+        to="/#"
+        className="btn btn-lg btn-primary btn-lg-square back-to-top"
+      >
         <i className="bi bi-arrow-up" />
-      </a>
+      </Link>
     </>
   );
 }
