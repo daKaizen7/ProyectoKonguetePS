@@ -1,0 +1,133 @@
+
+html,
+body {
+  height: 100%;
+}
+
+.login-page {
+  background-color: white;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.login-page .brand {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 40px auto;
+  box-shadow: black;
+  position: relative;
+  z-index: 1;
+	border-width: 1px;
+	border-color: #28939a;
+	background-color: #dbc6f615;
+}
+
+.login-page .brand img {
+  height: 50%;
+	width: 100%;
+	transform: translate(1%,55%);
+}
+
+.login-page .card-wrapper {
+  width: 400px;
+}
+
+.login-page .card {
+  border-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+	background-color: #dbc6f644;
+}
+
+.login-page .card.fat {
+  padding: 10px;
+}
+
+.login-page .card .card-title {
+  margin-bottom: 30px;
+}
+
+.login-page .form-control {
+  border-width: 2.3px;
+}
+
+.login-page .form-group label {
+  width: 100%;
+}
+
+.login-page .btn.btn-block {
+  padding: 12px 10px;
+}
+
+.login-page .footer {
+  margin: 40px 0;
+  color: #888;
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .login-page .card-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login-page .card.fat {
+    padding: 0;
+  }
+
+  .login-page .card.fat .card-body {
+    padding: 15px;
+  }
+}
+
+.custom-checkbox.custom-control{
+	display: flex;
+
+}
+
+.custom-control-label{
+	transform: translate(3px);
+}
+
+.custom-button{
+  margin-top: 5px;
+	width: 150px;
+
+}
+
+.card-body{
+  display: inline-flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.card-body form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.form-group{
+  margin: 3px 0;
+}
+
+.text-danger{
+  color:red;
+  font-size: 10px;
+}.error-box::after{
+  display: flex;
+  position: relative;
+  border-style: solid;
+  background-color: red;
+  width: 50%;
+  height: auto;
+  font-style: italic;
+  font-weight: bold;
+  justify-self: center;
+}
