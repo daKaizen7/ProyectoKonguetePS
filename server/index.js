@@ -1,5 +1,5 @@
 
-import connectDB from ("./js/connectMongo");
+import connectDB from "./js/connectMongo.js";
 
 connectDB();
 
