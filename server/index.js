@@ -1,10 +1,7 @@
-import app from "./app.js";
-import { PORT } from "./config.js";
-import { connectDB } from "./db.js";
+import app from "./js/app.js";
+import {connectDB} from "./js/db.js";
 
-async function main() {
-  const connectDB = require("./connectMongo");
-
+async function main() { 
   try {
     await connectDB();
     const PORT = process.env.PORT;
