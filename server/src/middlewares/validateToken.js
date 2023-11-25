@@ -1,4 +1,4 @@
-import { SECRET_TOKEN } from "../../js/config.js";
+import { SECRET_TOKEN } from "../../js/connectMongo.js";
 import jwt from "jsonwebtoken";
 
 export const authRequired = (req, res, next) => {
