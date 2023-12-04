@@ -2,15 +2,17 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../js/main.js";
 import "../css/styles.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function HomePage() {
+  const { isAuthenticated } = useAuth();
   return (
     <>
       {/* Navbar Start */}
       <div className="container-fluid sticky-top">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light p-0">
-            <Link to="/index" className="navbar-brand">
+            <Link to="/" className="navbar-brand">
               <h2 className="text-white">
                 <img
                   id="logo-texto"
@@ -60,12 +62,24 @@ function HomePage() {
                   Contáctanos
                 </Link>
               </div>
-              <Link
-                to="/login"
-                className="nav-item nav-link btn btn-dark py-2 px-4  d-lg-inline-block"
-              >
-                <i className="bi bi-person"> Ingresar</i>
-              </Link>
+
+              {!isAuthenticated ? (
+                <Link
+                  to="/login"
+                  className="nav-item nav-link btn btn-dark py-2 px-4 d-lg-inline-block"
+                >
+                  <i className="bi bi-person">
+                    <span>Ingresar</span>
+                  </i>
+                </Link>
+              ) : (
+                <Link
+                  to="/profile"
+                  className="nav-item nav-link btn btn-dark py-2 px-4 d-lg-inline-block"
+                >
+                  <i className="bi bi-person"></i>
+                </Link>
+              )}
             </div>
           </nav>
         </div>

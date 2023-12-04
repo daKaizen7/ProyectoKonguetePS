@@ -1,5 +1,8 @@
 import app from "./js/app.js";
 import {connectDB} from "./js/db.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function main() { 
   try {

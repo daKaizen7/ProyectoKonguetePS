@@ -1,26 +1,44 @@
 import { useForm } from "react-hook-form";
 import "../css/login.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { useAuth } from "../context/AuthContext";
+import { useUser } from "../context/UsersContext";
+import { Link, useParams,useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-function RegisterPage() {
+function UserFormPage() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
-  const { singup, isAuthenticated, errors: registerErrors } = useAuth();
+  const { createUser, getUser, updateUser, errors: registerErrors } = useUser();
 
+  const params = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
-    if (isAuthenticated) navigate("/");
-  }, [isAuthenticated]);
+    const loadUser = async () => {
+      if (params.id) {
+        const user = await getUser(params.id);
+        console.log(user);
+        setValue("username", user.username);
+        setValue("email", user.email);
+        setValue("password", user.password);
+        setValue("confirmPassword", user.password);
+        setValue("role", user.role);
+      }
+    };
+    loadUser();
+  }, []);
 
   const onSubmit = handleSubmit(async (values) => {
-    singup(values);
+    if (params.id) {
+      updateUser(params.id, values);
+      navigate("/admin")
+    } else {
+      createUser(values);
+    }
   });
 
   return (
@@ -49,7 +67,7 @@ function RegisterPage() {
                         </div>
                       ))}
                     </div>
-                    <h4 className="card-title">Registrarse</h4>
+                    <h4 className="card-title">Crear Usuario</h4>
                     <form onSubmit={onSubmit}>
                       <div className="form-group">
                         <input
@@ -100,23 +118,15 @@ function RegisterPage() {
                         </span>
                       )}
                       <div className="form-group">
-                        <div className="custom-checkbox custom-control">
-                          <input
-                            type="checkbox"
-                            {...register("agree", { required: true })}
-                          />
-                          <label
-                            htmlFor="agree"
-                            className="custom-control-label"
-                          >
-                            Acepto los{" "}
-                            <Link to="/#">Términos y Condiciones</Link>
-                          </label>
-                        </div>
+                        <input
+                          type="text"
+                          {...register("role", { required: true })}
+                          placeholder="Rol"
+                        />
                       </div>
-                      {errors.agree && (
+                      {errors.role && (
                         <span className="text-danger">
-                          Acepta los términos y condiciones
+                          El rol es obligatorio
                         </span>
                       )}
                       <div className="form-group m-0">
@@ -127,9 +137,10 @@ function RegisterPage() {
                           Registrar
                         </button>
                       </div>
-                      <div className="mt-4 text-center">
-                        ¿Ya tienes una cuenta? <Link to="/login">Ingresar</Link>
-                      </div>
+
+                      <Link to="/admin">
+                        <button className="mt-4 text-center">Volver</button>
+                      </Link>
                     </form>
                   </div>
                 </div>
@@ -143,4 +154,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default UserFormPage;

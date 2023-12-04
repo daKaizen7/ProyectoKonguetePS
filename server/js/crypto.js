@@ -18,7 +18,6 @@ export function encrypt(password) {
 export function decrypt(password) {
   let key = Buffer.from(password.key, "hex");
   let iv = Buffer.from(password.iv, "hex");
-  console.log(password.encryptedPassword)
   let encryptedText = Buffer.from(password.encryptedPassword, "hex");
   let decipher = crypto.createDecipheriv(algorithm, Buffer.from(key), iv);
   let decrypted = decipher.update(encryptedText);
